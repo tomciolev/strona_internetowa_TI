@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Najnowsze informacje</title>
+    <meta name="keywords" content="informacje, Ukraina, Rosja, wojna, Polska" />
+    <meta
+      name="description"
+      content="Przeczytaj o najnowszych infromacjach ze świata"
+    />
+    <meta name="author" content="Tomasz Solarski" />
+    <link rel="shortcut icon" href="Images/news.png" />
+    <link rel="page-photo" href="Images/tlo.jpg" />
+    <link rel="stylesheet" media="screen" href="Styles/styles.css" />
+    <link rel="stylesheet" media="screen" href="Styles/styl_menu_gorne.css" />
+    <link rel="stylesheet" media="screen" href="Styles/all.css" />
+    <script
+      src="https://kit.fontawesome.com/fdbc9dbcd8.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/33e93c8340.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheetfont"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Dodaję do wszystkich linków z tych dwóch klas funkcję
+        $(".nav-top a,.nav-side a, .landing-page a").on(
+          "click",
+          function (event) {
+            // Upewniam się, że hash ma jakąś wartość
+            if (this.hash !== "") {
+              // Blokuję domyślne zachowanie
+              event.preventDefault();
+              // this.hash zczytuje atrybut href począwszy od znaku #
+              var hash = this.hash;
+
+              // Używam JQuery animate, żeby uzyskać płynnego scrolla
+              // Numer (800) jest opcjonalny i mówi ile milisekund zajmie przescrolowanie do danego miejsca
+              $("html, body").animate(
+                {
+                  scrollTop: $(hash).offset().top,
+                },
+                800,
+                function () {
+                  // Add hash (#) to URL when done scrolling (default click behavior)
+                  window.location.hash = hash;
+                }
+              );
+            }
+          }
+        );
+      });
+      $(window).resize(function () {
+        if ($(window).width() < 600) {
+          $(".nav-side").hide();
+          $(".nav-top").show();
+        } else {
+          $(".nav-top").hide();
+          $(".nav-side").show();
+        }
+      });
+    </script>
+
+    <script src="myscript.js"></script>
+  </head>
+  <body style="margin: 0px" onload="startTime()">
+    <div class="landing-page">
+      <p>
+        <b>Witaj na stronie z najważniejszymi informacjami z całego świata</b>
+      </p>
+      <p id="info">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias incidunt
+        quasi quos error ex ab, expedita odio, cupiditate aperiam commodi ad
+        ducimus, ullam ut laudantium dolores fugiat et. Inventore, nisi.
+      </p>
+      <a href="#begin">Zaczynam czytać</a>
+    </div>
+    <header>
+      <div class="logo">
+        <nav class="nav-top">
+          <img class="img-logo" src="Images/news.png" alt="logo" />
+          <span id="web-title">Wiadomości</span>
+          <a href="#sekcja_1"
+            ><i class="fa-solid fa-globe"></i><span>Sekcja 1</span></a
+          >
+          <a href="#sekcja_2"
+            ><i class="fa-solid fa-computer"></i><span>Sekcja 2</span></a
+          >
+          <a href="#sekcja_3"
+            ><i class="fa-solid fa-people-group"></i><span>Sekcja 3</span></a
+          >
+          <a href="#sekcja_4"
+            ><i class="fa-solid fa-money-bill-trend-up"></i
+            ><span>Sekcja 4</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-side-container">
+      <nav class="nav-side">
+        <a href="#sekcja_1"><i class="fa-solid fa-globe"></i> </a>
+
+        <a href="#sekcja_2"><i class="fa-solid fa-map"></i></a>
+
+        <a href="#sekcja_3"><i class="fa-solid fa-house"></i> </a>
+
+        <a href="#sekcja_4"><i class="fa-solid fa-magnifying-glass"></i></a>
+      </nav>
+    </div>
+    <div class="container-main container" id="begin">
+      <hr class="dashed" />
+      <div class="container" id="sekcja_1">
+        <h1 class="zielony" id="id">Wojna na Ukrainie</h1>
+        <p>
+          Podczas gdy Rosja dalej wzmacnia siły nad ukraińską granicą, a
+          amerykański wywiad przestrzega, że Kreml już fabrykuje pretekst, by
+          dokonać inwazji, analitycy przypominają scenariusz odcięcia Ukrainy od
+          Morza Czarnego i budowy Noworosji. Noworosja to termin historyczny.
+          Tak Rosjanie niegdyś określali odebrane w XVIII w. Turcji tereny
+          ciągnące się wzdłuż wybrzeży Morza Azowskiego i Morza Czarnego. Do
+          politycznego języka Kremla słowo to wróciło w 2014 r., gdy Kreml
+          rozpoczął rozbiór Ukrainy: dokonał anszlusu Krymu, a próbując przejąć
+          kontrolę nad uprzemysłowionym Donbasem, wywołał tam trwającą do dziś
+          wojnę domową.
+        </p>
+        <div class="polaroid">
+          <a
+            href="https://www.newsweek.pl/swiat/polityka/ukraina-rosja-wojna-28-lutego-stany-zjednoczone-blokuja-transakcje-z-rosja/yv4th6f"
+            >Zdjęcie pochodzi ze strony Newsweek
+          </a>
+          <img
+            class="image"
+            src="https://bi.im-g.pl/im/b2/b7/19/z26964402V,Prezydent-Ukrainy-Wolodymyr-Zelenski-podczas-wizyt.jpg"
+            alt="Wojna"
+          />
+        </div>
+
+        <h2>
+          Polska stawia ultimatum. Jeśli wystartują Rosjanie, odwołamy imprezę!
+        </h2>
+        <p>
+          Minister sportu Kamil Bortniczuk robi wszystko, by zawodnicy z kraju
+          agresora nie mogli brać udziału w rywalizacji na wszystkich
+          szczeblach. Tym razem naciska na Międzynarodową Federację Narciarską,
+          by wykluczyć Rosjan z 45. Mistrzostw Świata Juniorów w narciarstwie
+          klasycznym. Polska grozi tym, że nie przeprowadzi imprezy w Zakopanem.
+          Czekamy na decyzję zarządu FIS, który debatuje w tej sprawie.
+          Ceremonia otwarcia imprezy nie odbyła się.
+        </p>
+
+        <h3>Chiny przeciwne jednostronnym sankcjom na Rosję</h3>
+        <p>
+          Minister spraw zagranicznych Chin Wang Yi powiedział, że jego kraj nie
+          pochwala stosowania sankcji jako środka rozwiązywania problemów i
+          "odrzuca jednostronne sankcje, które nie są oparte na prawie
+          międzynarodowym". Tymczasem sankcje Zachodu już dławią rosyjską
+          gospodarkę.
+        </p>
+      </div>
+      <hr class="dashed" />
+      <div class="container" id="sekcja_2">
+        <h1>
+          Anonymous opublikowali wiadomość po polsku. "To jest dezinformacja"
+        </h1>
+        <p>
+          To jest dezinformacja. Jeśli ktoś zamierza ukraść twoje pieniądze -
+          będą to ci sami komisarze, którzy zawsze je kradną - nie Anonimowi.
+          Robimy to za darmo, ponieważ jesteśmy aktywistami dla aktywistów - YAN
+          cc: @MSN @MSFTnews #Cyberatak #FałszyweWiadomości
+        </p>
+        <div class="polaroid">
+          <a
+            href="https://wiadomosci.onet.pl/swiat/wojna-w-ukrainie-strona-fsb-zhakowana-do-ataku-przyznala-sie-grupa-anonymous/v8vdm1r"
+            >Zdjęcie pochodzi ze strony Onet
+          </a>
+          <img class="image" src =
+          https://ocdn.eu/pulscms-transforms/1/mKSk9kpTURBXy8zYmJkMWQxNmZiOWM2ZmM2MTg1YTRlOWRiZjBjOGJhZC5qcGeTlQMAAM0DIM0BwpMFzQMUzQG8kwmmMzkxNjIwBoGhMAU/anonymous-prosi-o-pomoc-w-walce-z-isis.webp
+          alt="Anonymous" title="Zdjęcie pochodzi ze strony Onet"/>
+        </div>
+      </div>
+      <hr class="dashed" />
+      <div class="container" id="sekcja_3">
+        <h1>
+          Uważa się ją za czwartą orientację seksualną. Dotyczy wielu osób
+        </h1>
+        <p>
+          <b>
+            Aseksualność jest nieodczuwaniem pociągu seksualnego do innych osób
+            niezależnie od ich płci. Osoby aseksualne mogę mieć libido
+            (popęd/potrzebę seksualną) na standardowym poziomie, ale nie czują
+            pożądania, inni ludzie nie pociągają ich seksualnie. – tłumaczy
+            Justyna Bułdys, psycholożka i członkini zarządu Fundacji Q.
+            Aseksualność jako orientacja seksualna jest cechą wrodzoną, nie
+            nabytą. Osoby aseksualne nie pamiętają, żeby kiedykolwiek odczuwały
+            pociąg seksualny do innych osób.</b
+          >
+        </p>
+        <div id="image_container">
+          <div class="mySlides fade">
+            <img
+              class="img"
+              alt="krakow1"
+              src="Images/krk1.jpg"
+              style="width: 100%"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              class="img"
+              alt="krakow2"
+              src="Images/krk2.jpg"
+              style="width: 100%"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              class="img"
+              alt="krakow3"
+              src="Images/krk3.jpg"
+              style="width: 100%"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              class="img"
+              alt="krakow4"
+              src="Images/krk4.jpg"
+              style="width: 100%"
+            />
+          </div>
+          <div style="text-align: center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <br />
+        <hr class="dashed" />
+        <div id="sekcja_4">
+          <h1>Wojna w Ukrainie. Najnowsze dane o stratach rosyjskich</h1>
+          <p>
+            Ukraina informuje o rosyjskich stratach i ofiarach. Obliczenia
+            dotyczące ofiar są szacunkowe ze względu na intensywność walk. Dane
+            te zostały opublikowane we wtorek rano. Jeżeli chcesz poznać więcej
+            infromacji na ten temat
+            <a
+              href="https://www.onet.pl/informacje/onetwiadomosci/wojna-w-ukrainie-najnowsze-dane-o-stratach-rosyjskich/vl6kymv,79cfc278"
+              >kliknij tutaj.
+            </a>
+          </p>
+          <div class="list">
+            <p>
+              Straty Rosji według szacunkowych danych Ukrainy. Uszkodzone
+              zostało:
+            </p>
+            <ul>
+              <li>29 samolotów</li>
+              <li>29 śmigłowców</li>
+              <li>198 czołgów</li>
+              <li>846 opancerzonych wozów bojowych</li>
+              <li>77 systemów artyleryjskich</li>
+            </ul>
+          </div>
+          <div class="list">
+            <p>Niektóre z ostrzelanych miast ukraińskich:</p>
+            <ol type="1" start="1">
+              <li>Charków</li>
+              <li>Łuck</li>
+              <li>Dniep</li>
+              <li>Odessa</li>
+              <li>Mariupol</li>
+            </ol>
+          </div>
+          <div class="p_table">
+            <p>
+              Poniżej znajduje się tabela przedstawiająca kursy walut dla z dn.
+              01.03.2022 godz. 13:28
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Waluta</th>
+                  <th>Kurs</th>
+                  <th>Zmiana1</th>
+                  <th>Zmiana2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>EUR/USD</td>
+                  <td>1,1168</td>
+                  <td colspan="2" style="text-align: center">-0,47 %</td>
+                </tr>
+                <tr>
+                  <td>USD/RUB</td>
+                  <td>99,7328</td>
+                  <td>-6,58 %</td>
+                  <td>2%</td>
+                </tr>
+                <tr>
+                  <td>RUB/PLN</td>
+                  <td>0,0421</td>
+                  <td>9,35 %</td>
+                  <td>2%</td>
+                </tr>
+                <tr>
+                  <td>BTC/USD</td>
+                  <td>44 221,6270</td>
+                  <td>2,32 %</td>
+                  <td>2%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr class="dashed" />
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Tomasz Solarski &copy;, 2022</p>
+      <div id="zegar">tekst</div>
+    </footer>
+    <script>
+      let slideIndex = 0;
+      showSlides();
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 2000);
+      }
+    </script>
+  </body>
+</html>
